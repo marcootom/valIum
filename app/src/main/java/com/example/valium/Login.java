@@ -32,8 +32,8 @@ public class Login extends AppCompatActivity {
     }
 
     public void home() {
-        /*Intent intent = new Intent(this, Home.class);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, Profilo.class);
+        startActivity(intent);
     }
 
     public void registration(View view) {
@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
 
     private boolean checkInputField() {
         //Questa funzione verifica la correttezza dei campi inseriti e segnala all'utente eventuali errori con messaggi a video
-        /*String user = username.getText().toString();
+        String user = username.getText().toString();
         String pw = password.getText().toString();
         User u = MappaUtenti.recuperaUtente(user);
         int errors = 0;
@@ -64,7 +64,6 @@ public class Login extends AppCompatActivity {
             username.setError("Username inesistente");
             errors++;
         }
-        return (errors == 0);*/
-        return false;
+        return (errors == 0);
     }
 }

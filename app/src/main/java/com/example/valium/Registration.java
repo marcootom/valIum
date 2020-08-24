@@ -17,12 +17,12 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Registration extends AppCompatActivity {
-    //User user;
+    User user;
     EditText data;
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     DatePickerFragment datePickerFragment;
     Button registerButton;
-    com.google.android.material.textfield.TextInputEditText username, password, confirmPassword, city;
+    com.google.android.material.textfield.TextInputEditText username, password, confirmPassword, name, surname, phone;
     com.google.android.material.textfield.TextInputLayout pwHint, confirmPwHint;
 
     @Override
@@ -32,8 +32,11 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         datePickerFragment = new DatePickerFragment();
         data = findViewById(R.id.birthText);
-        username = findViewById(R.id.username);
+        username = findViewById(R.id.codiceFiscale);
         password = findViewById(R.id.password);
+        name = findViewById(R.id.name);
+        surname = findViewById(R.id.surname);
+        phone = findViewById(R.id.phone);
         confirmPassword = findViewById(R.id.confirmPassword);
         confirmPwHint = findViewById(R.id.confirmPasswordHint);
         pwHint = findViewById(R.id.passwordHint);
@@ -88,8 +91,8 @@ public class Registration extends AppCompatActivity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-                    //user = new User(username.getText().toString(), password.getText().toString(), city.getText().toString(), d);
-                    //MappaUtenti.aggiungi(user.getUsername(),user);
+                    user = new User(username.getText().toString(), password.getText().toString(), name.getText().toString(), surname.getText().toString(), d, phone.getText().toString());
+                    MappaUtenti.aggiungi(user.getUsername(),user);
                     Home();
                 }
             }
@@ -103,23 +106,14 @@ public class Registration extends AppCompatActivity {
         String passwordString = password.getText().toString();
         String confirmPasswordString = confirmPassword.getText().toString();
 
-        if(username.getText().length() <= 4){
-            username.setError("Lo username deve avere almeno 5 caratteri");
+
+        if(username.getText().length() < 16){
+            username.setError("Inserire un Codice Fiscale valido");
             errors++;
         }
 
-        /*if(MappaUtenti.recuperaUtente(username.getText().toString())!= null){
-            username.setError("Esiste già un utente con questo username");
-            errors++;
-        }*/
-
-        if (username.getText() == null || username.getText().length() == 0){
-            username.setError("Inserire un username");
-            errors++;
-        }
-
-        if (city.getText() == null || city.getText().length() == 0){
-            city.setError("Inserire la città di origine");
+        if(MappaUtenti.recuperaUtente(username.getText().toString())!= null){
+            username.setError("Codice Fiscale già presente nel sistema");
             errors++;
         }
 
@@ -130,8 +124,8 @@ public class Registration extends AppCompatActivity {
             data.setError(null);
         }
 
-        if(password.getText().length() <= 4){
-            password.setError("La password deve essere di almeno 5 caratteri");
+        if(password.getText().length() < 8){
+            password.setError("La password deve essere di almeno 8 caratteri");
             errors++;
         }
 
@@ -149,6 +143,21 @@ public class Registration extends AppCompatActivity {
             confirmPassword.setError("Password non corrispondente");
             errors++;
         }
+
+        if (name.getText() == null || name.getText().length() == 0) {
+            name.setError("Inserire il nome");
+            errors++;
+        }
+        if (surname.getText() == null || surname.getText().length() == 0) {
+            surname.setError("Inserire il cognome");
+            errors++;
+        }
+
+        if (phone.getText() == null || phone.getText().length() < 10) {
+            phone.setError("Inserire un numero di telefono valido");
+            errors++;
+        }
+
         return (errors == 0);
     }
 

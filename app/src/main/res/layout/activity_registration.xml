@@ -59,6 +59,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                app:endIconMode="password_toggle"
                 android:id="@+id/passwordHint"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -80,6 +81,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                app:endIconMode="password_toggle"
                 android:id="@+id/confirmPasswordHint"
                 android:layout_width="280dp"
                 android:layout_height="47dp"

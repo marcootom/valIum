@@ -107,8 +107,13 @@ public class Registration extends AppCompatActivity {
         String confirmPasswordString = confirmPassword.getText().toString();
 
 
-        if(username.getText().length() < 16){
+        if (username.getText() == null || username.getText().length() < 16){
             username.setError("Inserire un Codice Fiscale valido");
+            errors++;
+        }
+
+        if (validate(username.getText().toString()) != null){
+            username.setError("Il Codice Fiscale inserito non è valido");
             errors++;
         }
 
@@ -166,4 +171,45 @@ public class Registration extends AppCompatActivity {
         Intent intent = new Intent(this, Login.class);
         startActivity(intent);
     }
+
+    static String normalize(String cf)
+    {
+        cf = cf.replaceAll("[ \t\r\n]", "");
+        cf = cf.toUpperCase();
+        return cf;
+    }
+
+    static String format(String cf)
+    {
+        return normalize(cf);
+    }
+
+    /**
+     * Validates a regular CF.
+     * @param cf Normalized, 16 characters CF.
+     * @return Null if valid, or string describing why this CF must be rejected.
+     */
+    private static String validate(String cf)
+    {
+        cf = format(cf);
+        if( ! cf.matches("^[0-9A-Z]{16}$") )
+            return "Invalid characters.";
+        int s = 0;
+        String even_map = "BAFHJNPRTVCESULDGIMOQKWZYX";
+        for(int i = 0; i < 15; i++){
+            int c = cf.charAt(i);
+            int n;
+            if( '0' <= c && c <= '9' )
+                n = c - '0';
+            else
+                n = c - 'A';
+            if( (i & 1) == 0 )
+                n = even_map.charAt(n) - 'A';
+            s += n;
+        }
+        if( s%26 + 'A' != cf.charAt(15) )
+            return "Invalid checksum.";
+        return null;
+    }
 }
+

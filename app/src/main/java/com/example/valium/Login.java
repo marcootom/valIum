@@ -23,7 +23,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 if (checkInputField()) {
                     //Se il login è andato a buon fine, viene settato l'utente attuale con lo user usato per fare login
-                    //MappaUtenti.setUtenteAttuale(username.getText().toString());
+                    MappaUtenti.setUtenteAttuale(username.getText().toString());
                     //Si passa alla schermata Home
                     home();
                 }
@@ -32,7 +32,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void home() {
-        Intent intent = new Intent(this, Profilo.class);
+        Intent intent = new Intent(this, HomeUtente.class);
         startActivity(intent);
     }
 

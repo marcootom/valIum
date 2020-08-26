@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Profilo"></activity>
+        <activity
+            android:name=".HomeUtente"
+            android:label="@string/title_activity_home_utente"
+            android:theme="@style/NoActionBar"></activity>
         <activity android:name=".Registration" />
         <activity android:name=".Login">
             <intent-filter>

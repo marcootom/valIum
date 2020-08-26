@@ -8,8 +8,6 @@ import java.util.Map;
 public class MappaUtenti {
     private static Map<String, User> listaUtenti = new HashMap<>();
     private static String utenteAttuale;
-    private Date date = new Date(1996,3,3);
-    private User medico = new User("PRSDVD96C03E441A","davide96","Davide","Piras",date, "3886240344");
 
     //Funzione per recuperare i dati dell'utente attualmente loggato
     public static String getUtenteAttuale() {

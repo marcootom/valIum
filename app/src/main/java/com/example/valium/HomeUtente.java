@@ -20,16 +20,12 @@ import com.google.android.material.snackbar.Snackbar;
 public class HomeUtente extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    public TextView nomeCognome;
     public String nc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_utente);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        nc = MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getNome() + " " + MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getNome();
-        nomeCognome = findViewById(R.id.nomeCognome);
-        nomeCognome.setText(nc);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +37,10 @@ public class HomeUtente extends AppCompatActivity {
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        TextView ncText = headerView.findViewById(R.id.nomeCognome);
+        nc = MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getNome() + ' ' + MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getCognome();
+        ncText.setText(nc);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

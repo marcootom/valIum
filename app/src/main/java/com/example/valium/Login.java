@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Date;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
@@ -14,6 +16,9 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Date date = new Date(1996, 3, 3);
+        User medico = new User("PRSDVD96C03E441A", "davide96", "Davide", "Piras", date, "3886240344");
+        MappaUtenti.aggiungi(medico.getUsername(), medico);
         setContentView(R.layout.activity_login);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);

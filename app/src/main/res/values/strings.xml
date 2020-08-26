@@ -11,6 +11,7 @@
     <string name="nameText">Nome</string>
     <string name="surnameText">Cognome</string>
     <string name="phone">Telefono</string>
+    <string name="profile">Profilo</string>
     <string name="dateText">Data di nascita</string>
     <string name="logoutText">Logout</string>
     <string name="changePwText">Modifica Password</string>
@@ -26,7 +27,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
+    <string name="centroMedico">Centro Medico</string>
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

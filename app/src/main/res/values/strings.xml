@@ -3,7 +3,6 @@
     <string name="username">Username</string>
     <string name="codiceFiscale">Codice Fiscale</string>
     <string name="password">Password</string>
-    <string name="newPassword">Nuova Password</string>
     <string name="login">Login</string>
     <string name="registrazione"><u>Non sei registrato? Registrati</u></string>
     <string name="registrationText">Registrazione</string>
@@ -13,17 +12,9 @@
     <string name="phone">Telefono</string>
     <string name="profile">Profilo</string>
     <string name="dateText">Data di nascita</string>
-    <string name="logoutText">Logout</string>
-    <string name="changePwText">Modifica Password</string>
     <string name="confirmPassword">Conferma Password</string>
     <string name="registrati">Registrati</string>
-    <string name="ErrorText">Username o Password errati</string>
-    <string name="home">Home</string>
-    <string name="i_tuoi_dati">I tuoi dati</string>
     <string name="title_activity_home_utente">HomeUtente</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="centroMedico">Centro Medico</string>
@@ -32,4 +23,9 @@
     <string name="menu_slideshow">Slideshow</string>
 
     <string name="home_second">Home Second</string>
+    <string name="leMieRicette">Le mie ricette</string>
+    <string name="nuovaPrenotazione">Nuova prenotazione</string>
+    <string name="leMiePrenotazioni">Le mie prenotazioni</string>
+    <string name="contatti">Contatti</string>
+
 </resources>

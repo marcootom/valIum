@@ -19,6 +19,7 @@ import com.example.valium.Contatti;
 import com.example.valium.HomeUtente;
 import com.example.valium.R;
 import com.example.valium.Registration;
+import com.example.valium.Ricette;
 
 public class HomeFragment extends Fragment {
 
@@ -34,6 +35,13 @@ public class HomeFragment extends Fragment {
         contatti.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Contatti.class);
+                startActivity(intent);
+            }
+        });
+        CardView ricette = (CardView) root.findViewById(R.id.bottoneLeMieRicette);
+        ricette.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Ricette.class);
                 startActivity(intent);
             }
         });

@@ -25,7 +25,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="16dp"
         android:text="Dr. Mapou Yanga-Mbiwa"
-        android:textAppearance="@style"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

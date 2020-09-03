@@ -11,13 +11,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/iconapp"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Contatti"></activity>
-        <activity android:name=".Ricette"></activity>
+        <activity android:name=".Contatti" />
+        <activity android:name=".Ricette" />
         <activity
             android:name=".HomeUtente"
             android:label="@string/title_activity_home_utente"

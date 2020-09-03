@@ -15,7 +15,12 @@ public class MappaRicette {
         RicettaMedica r = new RicettaMedica("PRSDVD96C03E441A","drawable/ricettamedica.jpg",3,5,2010);
         RicettaMedica r2 = new RicettaMedica("PRSDVD96C03E441A","drawable/02da.jpg",3,5,2011);
         RicettaMedica r3 = new RicettaMedica("PRSDVD96C03E441A","drawable/riceawddasdttamedica.jpg",3,5,2012);
-        aggiungiRicetta(r);aggiungiRicetta(r2);aggiungiRicetta(r3);
+        RicettaMedica r4 = new RicettaMedica("TMSMRC94H14E281Z", "drawable/riceawddasdttamedica.jpg", 3, 5, 2012);
+
+        aggiungiRicetta(r);
+        aggiungiRicetta(r2);
+        aggiungiRicetta(r3);
+        aggiungiRicetta(r4);
         ArrayList<String> rUtente = new ArrayList<>();
 
         for(int i=0; i<(listaRicette.size());i++)
@@ -23,5 +28,14 @@ public class MappaRicette {
                 rUtente.add("#" + listaRicette.get(i).getId() + "      Ricetta del " + listaRicette.get(i).getGiorno() + "/" + listaRicette.get(i).getMese() + "/" + listaRicette.get(i).getAnno());
 
         return rUtente;
+    }
+
+    public static RicettaMedica ricettaPerId(int id) {
+        for (int i = 0; i < listaRicette.size(); i++) {
+            if (listaRicette.get(i).getId() == id) {
+                return listaRicette.get(i);
+            }
+        }
+        return null;
     }
 }

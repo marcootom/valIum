@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">valIum - Studio Medico</string>
+    <string name="app_name">Studio Medico - Valium</string>
     <string name="username">Username</string>
     <string name="codiceFiscale">Codice Fiscale</string>
     <string name="password">Password</string>

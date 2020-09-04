@@ -7,6 +7,7 @@ public class ListaAppuntamenti {
     private static ArrayList<Appuntamento> listaAppuntamenti = new ArrayList<>();
     public static void aggiungiAppuntamento (Appuntamento a){listaAppuntamenti.add(a);}
 
+
     public static ArrayList<Appuntamento> appuntamentiUtente(String username){
         ArrayList<Appuntamento> aUtente = new ArrayList<>();
 
@@ -26,5 +27,23 @@ public class ListaAppuntamenti {
                 break;
             }
         }
+    }
+
+    public static ArrayList<String> OrariLiberi() {
+        String[] quarterHours = {"00", "30"};
+        ArrayList<String> times = new ArrayList<String>(); // <-- List instead of array
+
+        for (int i = 8; i < 19; i++) {
+            if (i != 13 && i != 14 && i != 15) {
+                for (int j = 0; j < 2; j++) {
+                    String time = i + ":" + quarterHours[j];
+                    if (i < 10) {
+                        time = "0" + time;
+                    }
+                    times.add("" + time); // <-- no need to care about indexes
+                }
+            }
+        }
+        return times;
     }
 }

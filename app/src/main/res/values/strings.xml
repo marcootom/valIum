@@ -12,6 +12,7 @@
     <string name="phone">Telefono</string>
     <string name="profile">Profilo</string>
     <string name="dateText">Data di nascita</string>
+    <string name="dateApp">Data</string>
     <string name="confirmPassword">Conferma Password</string>
     <string name="registrati">Registrati</string>
     <string name="title_activity_home_utente">HomeUtente</string>

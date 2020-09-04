@@ -10,28 +10,27 @@ import java.util.Calendar;
 
 import androidx.fragment.app.DialogFragment;
 
-public class DatePickerFragment extends DialogFragment {
+public class AppointmentPicker extends DialogFragment {
 
     private Calendar date;
     private DatePickerFragmentListener listener;
-    public Dialog onCreateDialog(Bundle savedInstanceState){
+
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
         Calendar maxDate;
         //Questa porzione di codice vincola l'utente a inserire la data di nascita di una persona di almeno 18 anni e, soprattutto,
         //evita l'inserimento di date maggiori di quella attuale
         maxDate = Calendar.getInstance();
         maxDate.setTimeInMillis(Calendar.getInstance().getTimeInMillis());
-        //La modifica di questo campo permette di inserire dei vincoli sull'età della persona che effettua la registrazione
-        maxDate.add(Calendar.YEAR, -18);
 
-        if(date == null) {
+        if (date == null) {
             date = Calendar.getInstance();
             //Se non c'è una data imposta la data odierna
         }
         //Costruisce il picker in base alla data di oggi impostando un vincolo sulla data massima
         final DatePicker datePicker = new DatePicker(getActivity());
-        datePicker.setMaxDate(maxDate.getTimeInMillis());
-        datePicker.updateDate(date.get(Calendar.YEAR),date.get(Calendar.MONTH),date.get(Calendar.DAY_OF_MONTH));
+        datePicker.setMinDate(System.currentTimeMillis() - 1000);
+        datePicker.updateDate(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH));
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setView(datePicker);
 
@@ -43,8 +42,8 @@ public class DatePickerFragment extends DialogFragment {
                 date.set(Calendar.MONTH, datePicker.getMonth());
                 date.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
 
-                if(listener!=null){
-                    listener.onDatePickerFragmentOkButton(DatePickerFragment.this, date);
+                if (listener != null) {
+                    listener.onAppointmentPickerFragmentOkButton(AppointmentPicker.this, date);
                 }
             }
         });
@@ -52,8 +51,8 @@ public class DatePickerFragment extends DialogFragment {
         builder.setNegativeButton("Annulla", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(listener!=null){
-                            listener.onDatePickerFragmentCancelButton(DatePickerFragment.this);
+                        if (listener != null) {
+                            listener.onAppointmentPickerFragmentCancelButton(AppointmentPicker.this);
                         }
                     }
                 }
@@ -61,6 +60,7 @@ public class DatePickerFragment extends DialogFragment {
 
         return builder.create();
     }
+
     public Calendar getDate() {
         return date;
     }
@@ -69,12 +69,13 @@ public class DatePickerFragment extends DialogFragment {
         this.date = date;
     }
 
-    public void setOnDatePickerFragmentChanged(DatePickerFragmentListener l){
+    public void setOnDatePickerFragmentChanged(DatePickerFragmentListener l) {
         this.listener = l;
     }
 
-    public interface DatePickerFragmentListener{
-        public void onDatePickerFragmentOkButton(DialogFragment dialog, Calendar date);
-        public void onDatePickerFragmentCancelButton(DialogFragment dialog);
+    public interface DatePickerFragmentListener {
+        public void onAppointmentPickerFragmentOkButton(DialogFragment dialog, Calendar date);
+
+        public void onAppointmentPickerFragmentCancelButton(DialogFragment dialog);
     }
 }

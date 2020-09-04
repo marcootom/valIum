@@ -27,5 +27,6 @@
     <string name="nuovaPrenotazione">Nuova prenotazione</string>
     <string name="leMiePrenotazioni">Le mie prenotazioni</string>
     <string name="contatti">Contatti</string>
+    <string name="email">Email</string>
 
 </resources>

@@ -27,7 +27,7 @@
                 android:layout_width="135dp"
                 android:layout_height="116dp"
                 android:layout_gravity="center"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logostudiomedico" />
 
             <TextView
                 android:id="@+id/loginText"

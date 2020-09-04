@@ -17,8 +17,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Date date = new Date(1996, 3, 3);
-        User medico = new User("PRSDVD96C03E441A", "davide96", "Davide", "Piras", date, "3886240344");
-        MappaUtenti.aggiungi(medico.getUsername(), medico);
+
         setContentView(R.layout.activity_login);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
@@ -30,8 +29,9 @@ public class Login extends AppCompatActivity {
                 if (checkInputField()) {
                     //Se il login è andato a buon fine, viene settato l'utente attuale con lo user usato per fare login
                     MappaUtenti.setUtenteAttuale(username.getText().toString());
-                    //Si passa alla schermata Home
-                    home();
+                    if (!MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getMedico()) {
+                        home();
+                    } else homeMedico();
                 }
             }
         });
@@ -42,8 +42,13 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void homeMedico() {
+        Intent intent = new Intent(this, Ricette.class);
+        startActivity(intent);
+    }
+
     public void registration(View view) {
-        Intent intent = new Intent(this, Registration.class);
+        Intent intent = new Intent(this, HomeUtente.class);
         startActivity(intent);
     }
 

@@ -13,6 +13,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Registration extends AppCompatActivity {
     User user;
@@ -20,7 +22,7 @@ public class Registration extends AppCompatActivity {
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
     DatePickerFragment datePickerFragment;
     Button registerButton;
-    com.google.android.material.textfield.TextInputEditText username, password, confirmPassword, name, surname, phone;
+    com.google.android.material.textfield.TextInputEditText username, password, confirmPassword, name, surname, phone, email;
     com.google.android.material.textfield.TextInputLayout pwHint, confirmPwHint;
 
     @Override
@@ -35,6 +37,7 @@ public class Registration extends AppCompatActivity {
         name = findViewById(R.id.name);
         surname = findViewById(R.id.surname);
         phone = findViewById(R.id.phone);
+        email = findViewById(R.id.email);
         confirmPassword = findViewById(R.id.confirmPassword);
         confirmPwHint = findViewById(R.id.confirmPasswordHint);
         pwHint = findViewById(R.id.passwordHint);
@@ -89,7 +92,8 @@ public class Registration extends AppCompatActivity {
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
-                    user = new User(username.getText().toString(), password.getText().toString(), name.getText().toString(), surname.getText().toString(), d, phone.getText().toString());
+                    user = new User(username.getText().toString(), password.getText().toString(), name.getText().toString(),
+                            surname.getText().toString(), d, phone.getText().toString(), email.getText().toString(), false);
                     MappaUtenti.aggiungi(user.getUsername(),user);
                     Home();
                 }
@@ -161,6 +165,16 @@ public class Registration extends AppCompatActivity {
             errors++;
         }
 
+        if (email.getText() == null) {
+            email.setError("Inserire un indirizzo mail valido");
+            errors++;
+        }
+
+        if (!validateMail(email.getText().toString())) {
+            email.setError("Inserire un indirizzo mail valido");
+            errors++;
+        }
+
         return (errors == 0);
     }
 
@@ -208,6 +222,30 @@ public class Registration extends AppCompatActivity {
         if( s%26 + 'A' != cf.charAt(15) )
             return "Invalid checksum.";
         return null;
+    }
+
+    /**
+     * Funzione per la validazione di un indirizzo e-mail
+     *
+     * @param mail Indirizzo e-mail da validare
+     * @return TRUE se la mail è stata validata correttamente
+     */
+    public boolean validateMail(String mail) {
+        if (mail == null) {
+            return false;
+        }
+
+        Pattern p = Pattern.compile(".+@.+\\.[a-z]+", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(mail);
+        boolean matchFound = m.matches();
+
+//Condizioni più restrittive rispetto alle precedenti
+        String expressionPlus = "^[\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+        Pattern pPlus = Pattern.compile(expressionPlus, Pattern.CASE_INSENSITIVE);
+        Matcher mPlus = pPlus.matcher(mail);
+        boolean matchFoundPlus = mPlus.matches();
+
+        return matchFound && matchFoundPlus;
     }
 }
 

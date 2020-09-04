@@ -9,14 +9,21 @@ public class User {
     private String cognome;
     private Date dataNascita;
     private String telefono;
+    private String email;
+    private int puntiAppuntamento;
+    private Boolean medico;
 
-    public User(String username, String password, String nome, String cognome, Date dataNascita, String telefono) {
+
+    public User(String username, String password, String nome, String cognome, Date dataNascita, String telefono, String email, Boolean medico) {
         this.username = username;
         this.password = password;
         this.nome = nome;
         this.cognome = cognome;
         this.telefono = telefono;
         this.dataNascita = dataNascita;
+        this.email = email;
+        this.puntiAppuntamento = 3;
+        this.medico = medico;
     }
 
     public String getUsername() {
@@ -65,5 +72,30 @@ public class User {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getPuntiAppuntamento() {
+        return puntiAppuntamento;
+    }
+
+    public void setPuntiAppuntamento(int puntiAppuntamento) {
+        this.puntiAppuntamento = puntiAppuntamento;
+    }
+
+    public Boolean getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Boolean medico) {
+        this.medico = medico;
     }
 }

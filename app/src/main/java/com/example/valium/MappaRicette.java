@@ -8,7 +8,17 @@ import java.util.Map;
 
 public class MappaRicette {
     private static ArrayList<RicettaMedica> listaRicette = new ArrayList<>();
-    public static void aggiungiRicetta (RicettaMedica r){listaRicette.add(r);}
+
+    public static void aggiungiRicetta(RicettaMedica r) {
+        RicettaMedica x;
+        for (int i = 0; i < listaRicette.size(); i++) {
+            x = listaRicette.get(i);
+            if (x.getUsername().equals(r.getUsername()) && x.getAnno() == r.getAnno() && x.getGiorno() == r.getGiorno() &&
+                    x.getMese() == r.getMese())
+                return;
+        }
+        listaRicette.add(r);
+    }
 
 
     public static ArrayList<String> ricetteUtente(String username){

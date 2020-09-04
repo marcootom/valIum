@@ -6,7 +6,6 @@ import java.util.Map;
 //dell'utente.
 public class MappaUtenti {
     private static Map<String, User> listaUtenti = new HashMap<>();
-    private static Map<String, User> listaMedici = new HashMap<>();
     private static String utenteAttuale;
 
     //Funzione per recuperare i dati dell'utente attualmente loggato
@@ -23,9 +22,12 @@ public class MappaUtenti {
     }
     //Attraverso lo user (che è la chiave dell'HashMap) vengono recuperati i dati dell'utente
     public static User recuperaUtente(String username) {
-        if (listaMedici.get(username) != null) {
-            return listaMedici.get(username);
-        } else return listaUtenti.get(username);
+        return listaUtenti.get(username);
+    }
+
+    public static User recuperaMedico() {
+        String medico = "RSSMRA75S04B354T";
+        return listaUtenti.get(medico);
     }
     //Questa funzione aggiorna la password di un utente già presente nella mappa
     public static void modificaPassword(String newPw){

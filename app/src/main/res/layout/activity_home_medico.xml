@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -18,91 +17,32 @@
         card_view:layout_constraintStart_toStartOf="parent"
         card_view:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/bottoneContatti"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="@color/bluApplicazione"
+    <TextView
+        android:id="@+id/benvenutomedico"
+        android:layout_width="350dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="12dp"
+        android:gravity="center_horizontal"
+        android:text="BENVENUTO"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#2196F3"
+        android:textSize="24sp"
+        android:typeface="monospace"
+        card_view:layout_constraintBottom_toTopOf="@+id/bottoneLeMieRicette"
         card_view:layout_constraintEnd_toEndOf="parent"
-        card_view:layout_constraintHeight_percent="0.22"
-        card_view:layout_constraintHorizontal_bias="0.29"
-        card_view:layout_constraintStart_toEndOf="@+id/bottoneNuovaPrenotazione"
-        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMiePrenotazioni"
-        card_view:layout_constraintWidth_percent="0.4">
-
-        <ImageView
-            android:layout_width="135dp"
-            android:layout_height="116dp"
-            android:layout_gravity="center"
-            android:paddingBottom="30dp"
-            android:src="@drawable/record" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/contatti"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:typeface="monospace" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/bottoneNuovaPrenotazione"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="20dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?selectableItemBackground"
-        card_view:cardBackgroundColor="@color/bluApplicazione"
-        card_view:cardCornerRadius="0dp"
-        card_view:contentPadding="0dp"
-        card_view:layout_constraintHeight_percent="0.22"
+        card_view:layout_constraintHorizontal_bias="0.491"
         card_view:layout_constraintStart_toStartOf="parent"
-        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMieRicette"
-        card_view:layout_constraintWidth_percent="0.4">
-
-        <ImageView
-            android:layout_width="135dp"
-            android:layout_height="116dp"
-            android:layout_gravity="center"
-            android:paddingBottom="30dp"
-            android:src="@drawable/calendarperson" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="44dp"
-            android:layout_marginEnd="16dp"
-            android:text="@string/nuovaPrenotazione"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF"
-            android:textSize="12sp"
-            android:typeface="monospace" />
-    </androidx.cardview.widget.CardView>
+        card_view:layout_constraintTop_toBottomOf="@+id/logoStudio"
+        card_view:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bottoneLeMieRicette"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="60dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?selectableItemBackground"
@@ -137,7 +77,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/bottoneLeMiePrenotazioni"
+        android:id="@+id/bottoneContatti"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
@@ -149,7 +89,85 @@
         card_view:cardBackgroundColor="@color/bluApplicazione"
         card_view:layout_constraintEnd_toEndOf="parent"
         card_view:layout_constraintHeight_percent="0.22"
-        card_view:layout_constraintHorizontal_bias="0.307"
+        card_view:layout_constraintHorizontal_bias="0.333"
+        card_view:layout_constraintStart_toEndOf="@+id/bottoneNuovaPrenotazione"
+        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMiePrenotazioni"
+        card_view:layout_constraintWidth_percent="0.4">
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="116dp"
+            android:layout_gravity="center"
+            android:paddingBottom="30dp"
+            android:src="@drawable/record" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/contatti"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:typeface="monospace" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottoneNuovaPrenotazione"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        card_view:cardBackgroundColor="@color/bluApplicazione"
+        card_view:cardCornerRadius="0dp"
+        card_view:contentPadding="0dp"
+        card_view:layout_constraintHeight_percent="0.22"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMieRicette"
+        card_view:layout_constraintWidth_percent="0.4">
+
+        <ImageView
+            android:layout_width="135dp"
+            android:layout_height="116dp"
+            android:layout_gravity="center"
+            android:paddingBottom="30dp"
+            android:src="@drawable/calendarperson" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/codicediprova"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:typeface="monospace" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/bottoneLeMiePrenotazioni"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        card_view:cardBackgroundColor="@color/bluApplicazione"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintHeight_percent="0.22"
+        card_view:layout_constraintHorizontal_bias="0.333"
         card_view:layout_constraintStart_toEndOf="@+id/bottoneLeMieRicette"
         card_view:layout_constraintTop_toBottomOf="@+id/logoStudio"
         card_view:layout_constraintWidth_percent="0.4">
@@ -162,8 +180,8 @@
             android:src="@drawable/calendar" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="39dp"
+            android:layout_width="165dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="16dp"
             android:layout_marginTop="44dp"

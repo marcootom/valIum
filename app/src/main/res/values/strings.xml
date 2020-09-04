@@ -28,5 +28,6 @@
     <string name="leMiePrenotazioni">Le mie prenotazioni</string>
     <string name="contatti">Contatti</string>
     <string name="email">Email</string>
+    <string name="codicediprova">CodiceDIPROVA</string>
 
 </resources>

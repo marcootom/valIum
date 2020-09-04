@@ -37,7 +37,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginEnd="16dp"
-                android:fontFamily="monospace"
                 android:text="@string/login"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#2196F3"
@@ -54,7 +53,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="36dp"
-                android:hint="@string/username">
+                android:hint="@string/codiceFiscale">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/username"

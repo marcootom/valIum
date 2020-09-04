@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Date;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
@@ -15,9 +13,8 @@ public class Login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        DataSet.caricaDati();
         super.onCreate(savedInstanceState);
-        Date date = new Date(1996, 3, 3);
-
         setContentView(R.layout.activity_login);
         username = findViewById(R.id.username);
         password = findViewById(R.id.password);
@@ -43,7 +40,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void homeMedico() {
-        Intent intent = new Intent(this, Ricette.class);
+        Intent intent = new Intent(this, HomeMedico.class);
         startActivity(intent);
     }
 
@@ -63,7 +60,7 @@ public class Login extends AppCompatActivity {
             errors++;
         }
         if (user.equals("")) {
-            username.setError("L'username non può essere vuoto");
+            username.setError("Il Codice Fiscale non può essere vuoto");
             errors++;
         }
         if (u != null) {
@@ -72,7 +69,7 @@ public class Login extends AppCompatActivity {
                 errors++;
             }
         } else {
-            username.setError("Username inesistente");
+            username.setError("Codice Fiscale non presente nel sistema");
             errors++;
         }
         return (errors == 0);

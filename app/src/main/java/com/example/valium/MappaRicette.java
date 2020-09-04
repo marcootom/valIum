@@ -12,10 +12,10 @@ public class MappaRicette {
 
 
     public static ArrayList<String> ricetteUtente(String username){
-        RicettaMedica r = new RicettaMedica("PRSDVD96C03E441A","drawable/ricettamedica.jpg",3,5,2010);
-        RicettaMedica r2 = new RicettaMedica("PRSDVD96C03E441A","drawable/02da.jpg",3,5,2011);
-        RicettaMedica r3 = new RicettaMedica("PRSDVD96C03E441A","drawable/riceawddasdttamedica.jpg",3,5,2012);
-        RicettaMedica r4 = new RicettaMedica("TMSMRC94H14E281Z", "drawable/riceawddasdttamedica.jpg", 3, 5, 2012);
+        RicettaMedica r = new RicettaMedica("PRSDVD96C03E441A","https://upload.wikimedia.org/wikipedia/it/9/90/RICETTA_MEDICA.jpg",3,5,2010);
+        RicettaMedica r2 = new RicettaMedica("PRSDVD96C03E441A","https://upload.wikimedia.org/wikipedia/it/9/90/RICETTA_MEDICA.jpg",3,5,2011);
+        RicettaMedica r3 = new RicettaMedica("PRSDVD96C03E441A","https://upload.wikimedia.org/wikipedia/it/9/90/RICETTA_MEDICA.jpg",3,5,2012);
+        RicettaMedica r4 = new RicettaMedica("TMSMRC94H14E281Z", "https://upload.wikimedia.org/wikipedia/it/9/90/RICETTA_MEDICA.jpg", 3, 5, 2012);
 
         aggiungiRicetta(r);
         aggiungiRicetta(r2);

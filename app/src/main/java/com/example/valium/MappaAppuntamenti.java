@@ -42,6 +42,7 @@ public class MappaAppuntamenti {
                 m = listaAppuntamenti.get(i).getMinutes();
                 s = h + ":" + m;
                 if (h < 10) s = "0" + s;
+                if (m == 0) s += "0";
                 busy.add(s);
             }
         }

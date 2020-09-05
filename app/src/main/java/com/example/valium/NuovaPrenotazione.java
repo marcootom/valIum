@@ -32,6 +32,7 @@ public class NuovaPrenotazione extends AppCompatActivity {
         setContentView(R.layout.activity_nuova_prenotazione);
         datePickerFragment = new AppointmentPicker();
         data = findViewById(R.id.appointmentDate);
+
         data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,37 +66,39 @@ public class NuovaPrenotazione extends AppCompatActivity {
                 final ListView mylist = findViewById(R.id.listaOrariDisponibili);
                 final ArrayAdapter<String> adapter = new ArrayAdapter<String>(NuovaPrenotazione.this, android.R.layout.simple_list_item_1, MappaAppuntamenti.OrariLiberi(date1));
                 mylist.setAdapter(adapter);
-                mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
-                    public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id) {
-                        final String time = (String) adattatore.getItemAtPosition(pos);
-                        AlertDialog.Builder builder = new AlertDialog.Builder(NuovaPrenotazione.this);
-                        builder.setCancelable(true);
-                        builder.setTitle("Conferma prenotazione");
-                        builder.setMessage("Confermi la prenotazione per il " + d + " alle " + time + "?");
-                        builder.setPositiveButton("Conferma",
-                                new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        final int h, m;
-                                        String numbers[] = time.split(":");
-                                        h = Integer.parseInt(numbers[0]);
-                                        m = Integer.parseInt(numbers[1]);
-                                        MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
-                                        //home();
-                                    }
-                                });
-                        builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                            }
-                        });
+                if (!(adapter.getCount() == 1 && adapter.getItem(0).equals("Nessun orario disponibile per questa data"))) {
+                    mylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                        @Override
+                        public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id) {
+                            final String time = (String) adattatore.getItemAtPosition(pos);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(NuovaPrenotazione.this);
+                            builder.setCancelable(true);
+                            builder.setTitle("Conferma prenotazione");
+                            builder.setMessage("Confermi la prenotazione per il " + d + " alle " + time + "?");
+                            builder.setPositiveButton("Conferma",
+                                    new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            final int h, m;
+                                            String numbers[] = time.split(":");
+                                            h = Integer.parseInt(numbers[0]);
+                                            m = Integer.parseInt(numbers[1]);
+                                            MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
+                                            home();
+                                        }
+                                    });
+                            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
 
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
-                    }
-                });
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
+                        }
+                    });
+                }
             }
 
             @Override

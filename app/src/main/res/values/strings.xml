@@ -30,5 +30,6 @@
     <string name="contatti">Contatti</string>
     <string name="email">Email</string>
     <string name="codicediprova">CodiceDIPROVA</string>
+    <string name="orari_disponibili">Orari Disponibili</string>
 
 </resources>

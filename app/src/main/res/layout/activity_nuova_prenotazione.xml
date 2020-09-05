@@ -15,7 +15,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="378dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="0dp"
                 android:orientation="vertical">
 
                 <ImageView
@@ -67,11 +67,29 @@
                         android:layout_height="47dp"
                         android:focusableInTouchMode="false"
                         android:inputType="date"
-                        android:paddingRight="40dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/newAppointmentText" />
+
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/freeHours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/orari_disponibili"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:typeface="monospace"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </LinearLayout>
         </ScrollView>
 
@@ -81,11 +99,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -93,10 +113,9 @@
 
                 <ListView
                     android:id="@+id/listaOrariDisponibili"
-                    android:layout_width="311dp"
+                    android:layout_width="240dp"
                     android:layout_height="219dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="0dp" />
 
 
             </LinearLayout>

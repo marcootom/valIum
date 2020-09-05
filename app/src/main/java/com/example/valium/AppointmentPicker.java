@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
+import java.text.ParseException;
 import java.util.Calendar;
 
 import androidx.fragment.app.DialogFragment;
@@ -43,7 +44,11 @@ public class AppointmentPicker extends DialogFragment {
                 date.set(Calendar.DAY_OF_MONTH, datePicker.getDayOfMonth());
 
                 if (listener != null) {
-                    listener.onAppointmentPickerFragmentOkButton(AppointmentPicker.this, date);
+                    try {
+                        listener.onAppointmentPickerFragmentOkButton(AppointmentPicker.this, date);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -74,7 +79,7 @@ public class AppointmentPicker extends DialogFragment {
     }
 
     public interface DatePickerFragmentListener {
-        public void onAppointmentPickerFragmentOkButton(DialogFragment dialog, Calendar date);
+        public void onAppointmentPickerFragmentOkButton(DialogFragment dialog, Calendar date) throws ParseException;
 
         public void onAppointmentPickerFragmentCancelButton(DialogFragment dialog);
     }

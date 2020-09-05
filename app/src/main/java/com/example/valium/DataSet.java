@@ -13,7 +13,7 @@ public class DataSet {
     }
 
     public static void caricaMedico() {
-        Date date = new Date(1975, 11, 4);
+        Date date = new Date(75, 10, 4);
         User medico = new User("RSSMRA75S04B354T", "medico75", "Mario", "Rossi",
                 date, "0704544896", "dotrossimario@gmail.com", true);
         MappaUtenti.aggiungi(medico.getUsername(), medico);
@@ -21,13 +21,13 @@ public class DataSet {
 
     public static void caricaUtenti() {
         Date date;
-        date = new Date(1952, 9, 9);
+        date = new Date(52, 8, 9);
         User u1 = new User("BNCLGU52P09I734K", "siliqua33", "Luigi", "Bianchi",
                 date, "3365588978", "whiteluigi@gmail.com", false);
-        date = new Date(1967, 7, 6);
+        date = new Date(67, 6, 6);
         User u2 = new User("VRDGNN67L46I765G", "tartaruga22", "Giovanna", "Verdi",
                 date, "3452525225", "gioverdi@gmail.com", false);
-        date = new Date(1996, 3, 3);
+        date = new Date(96, 2, 3);
         User u3 = new User("PRSDVD96C03E441A", "davide96", "Davide", "Piras",
                 date, "3886240344", "davidino96@gmail.com", false);
         MappaUtenti.aggiungi(u1.getUsername(), u1);
@@ -51,6 +51,18 @@ public class DataSet {
     }
 
     public static void caricaAppuntamenti() {
-
+        Appuntamento a;
+        Date date = new Date(120, 8, 23);
+        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30);
+        MappaAppuntamenti.aggiungiAppuntamento(a);
+        date = new Date(120, 8, 24);
+        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30);
+        MappaAppuntamenti.aggiungiAppuntamento(a);
+        date = new Date(120, 8, 28);
+        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30);
+        MappaAppuntamenti.aggiungiAppuntamento(a);
+        date = new Date(120, 8, 24);
+        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30);
+        MappaAppuntamenti.aggiungiAppuntamento(a);
     }
 }

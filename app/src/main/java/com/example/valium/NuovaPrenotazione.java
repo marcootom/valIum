@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -85,7 +86,8 @@ public class NuovaPrenotazione extends AppCompatActivity {
                                             h = Integer.parseInt(numbers[0]);
                                             m = Integer.parseInt(numbers[1]);
                                             MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
-                                            home();
+                                            Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
+                                            listaPrenotazioni();
                                         }
                                     });
                             builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
@@ -110,8 +112,8 @@ public class NuovaPrenotazione extends AppCompatActivity {
 
     }
 
-    public void home() {
-        Intent intent = new Intent(this, HomeUtente.class);
+    public void listaPrenotazioni() {
+        Intent intent = new Intent(this, ListaPrenotazioni.class);
         startActivity(intent);
     }
 }

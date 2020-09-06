@@ -1,5 +1,8 @@
 package com.example.valium;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -16,6 +19,32 @@ public class MappaAppuntamenti {
         for(int i=0; i<(listaAppuntamenti.size());i++)
             if(listaAppuntamenti.get(i).getPaziente().equals(username))
                 aUtente.add(listaAppuntamenti.get(i));
+
+        return aUtente;
+    }
+
+    public static ArrayList<String> appuntamentiUtenteAttuale(String username) {
+        ArrayList<String> aUtente = new ArrayList<>();
+        String msg = "";
+        String data = "";
+
+        for(int i=0; i<(listaAppuntamenti.size());i++) {
+            msg = "";
+
+            if (listaAppuntamenti.get(i).getPaziente().equals(username)) {
+                int anno = listaAppuntamenti.get(i).getData().getYear() + 1900;
+                int minuti = listaAppuntamenti.get(i).getMinutes();
+                String minuto = "" + minuti;
+                if(minuti == 0) {
+                    minuto += minuti;
+                }
+                msg += "Appuntamento del " + listaAppuntamenti.get(i).getData().getDay() + "/" + (
+                        listaAppuntamenti.get(i).getData().getMonth() + 1) + "/" + Integer.toString(anno) +" alle ore: " + listaAppuntamenti.get(i).getHours() +":"+
+                        minuto;
+                aUtente.add(msg);
+            }
+
+        }
 
         return aUtente;
     }

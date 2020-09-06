@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -13,6 +14,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public ArrayList<String> myValues;
     public RecyclerViewAdapter (ArrayList<String> myValues){
         this.myValues= myValues;
+=======
+import java.util.ArrayList;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+    public ArrayList<String> myValues;
+
+    public RecyclerViewAdapter(ArrayList<String> myValues) {
+        this.myValues = myValues;
+>>>>>>> 59767ea69a67938f05989329833268bc4451e26c
     }
 
     @Override
@@ -35,9 +47,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView myTextView;
+<<<<<<< HEAD
         public MyViewHolder(View itemView) {
             super(itemView);
             myTextView = (TextView)itemView.findViewById(R.id.text_cardview);
+=======
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            myTextView = (TextView) itemView.findViewById(R.id.text_cardview);
+>>>>>>> 59767ea69a67938f05989329833268bc4451e26c
         }
     }
 }

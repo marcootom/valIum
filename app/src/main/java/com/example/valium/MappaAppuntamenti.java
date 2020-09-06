@@ -13,9 +13,37 @@ public class MappaAppuntamenti {
     public static ArrayList<Appuntamento> appuntamentiUtente(String username){
         ArrayList<Appuntamento> aUtente = new ArrayList<>();
 
-        for(int i=0; i<(listaAppuntamenti.size());i++)
+        for(int i = 0; i<(listaAppuntamenti.size()); i++)
             if(listaAppuntamenti.get(i).getPaziente().equals(username))
                 aUtente.add(listaAppuntamenti.get(i));
+
+        return aUtente;
+    }
+
+    public static ArrayList<String> appuntamentiUtenteAttuale(String username) {
+        ArrayList<String> aUtente = new ArrayList<>();
+        String msg = "";
+        String data = "";
+
+        Calendar calendar = Calendar.getInstance();
+
+        for (int i = 0; i < (listaAppuntamenti.size()); i++) {
+            msg = "";
+            calendar.setTime(listaAppuntamenti.get(i).getData());
+            if (listaAppuntamenti.get(i).getPaziente().equals(username)) {
+                int anno = calendar.get(Calendar.YEAR);
+                int minuti = calendar.get(Calendar.MINUTE);
+                String minuto = "" + minuti;
+                if (minuti == 0) {
+                    minuto += minuti;
+                }
+                msg += "Appuntamento del " + calendar.get(Calendar.DAY_OF_MONTH) + "/" + (
+                        calendar.get(Calendar.MONTH) + 1) + "/" + Integer.toString(anno) + " alle ore: " + listaAppuntamenti.get(i).getHours() + ":" +
+                        minuto;
+                aUtente.add(msg);
+            }
+
+        }
 
         return aUtente;
     }
@@ -34,10 +62,15 @@ public class MappaAppuntamenti {
     public static ArrayList<String> OrariOccupatiPerData(Date d) {
         int h, m;
         String s;
+        Calendar calendar = Calendar.getInstance(), calendar2 = Calendar.getInstance();
+        calendar2.setTime(d);
+
         ArrayList<String> busy = new ArrayList<String>(); // <-- List instead of array
         for (int i = 0; i < listaAppuntamenti.size(); i++) {
-            if (listaAppuntamenti.get(i).getData().getDay() == d.getDay() && listaAppuntamenti.get(i).getData().getMonth() == d.getMonth()
-                    && listaAppuntamenti.get(i).getData().getYear() == d.getYear()) {
+            calendar.setTime(listaAppuntamenti.get(i).getData());
+            if (calendar.get(Calendar.DAY_OF_MONTH) + 1 == calendar2.get(Calendar.DAY_OF_MONTH) &&
+                    calendar.get(Calendar.MONTH) == calendar2.get(Calendar.MONTH) &&
+                    calendar.get(Calendar.YEAR) == calendar2.get(Calendar.YEAR)) {
                 h = listaAppuntamenti.get(i).getHours();
                 m = listaAppuntamenti.get(i).getMinutes();
                 s = h + ":" + m;

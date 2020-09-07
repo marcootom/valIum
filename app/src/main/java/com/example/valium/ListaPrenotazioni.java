@@ -26,7 +26,6 @@ public class ListaPrenotazioni extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         r.setLayoutManager(llm);
 
-
     }
 
     public void onBackPressed()

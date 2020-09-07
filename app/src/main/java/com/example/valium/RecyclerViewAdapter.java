@@ -1,6 +1,7 @@
 package com.example.valium;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.util.Log;
@@ -9,8 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.DateFormat;
@@ -64,9 +67,33 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View v) {
-                Log.d("Ciao","Ciao");
-                MappaAppuntamenti.rimuoviAppuntamento(a);
-                c.startActivity(new Intent(c, ListaPrenotazioni.class));
+                AlertDialog.Builder alertDialog1 = new AlertDialog.Builder(c);
+                // Setting Dialog Title
+                alertDialog1.setTitle("Cancellazione");
+
+                // Setting Dialog Message
+                alertDialog1.setMessage("Confermi la cancellazione della prenotazione?");
+
+                alertDialog1.setPositiveButton("Conferma",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(c, "Prenotazione annullata!", Toast.LENGTH_LONG).show();
+                                MappaAppuntamenti.rimuoviAppuntamento(a);
+                                c.startActivity(new Intent(c, ListaPrenotazioni.class));
+                            }
+                        });
+
+                alertDialog1.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                // Setting OK Button
+
+
+                // Showing Alert Message
+                alertDialog1.show();
             }
         });;
     }

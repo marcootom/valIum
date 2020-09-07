@@ -74,4 +74,12 @@ public class Login extends AppCompatActivity {
         }
         return (errors == 0);
     }
+
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(this, Login.class));
+        finish();
+
+    }
 }

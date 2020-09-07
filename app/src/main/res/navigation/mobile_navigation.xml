@@ -18,9 +18,9 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.valium.ui.gallery.GalleryFragment"
+        android:name="com.example.valium.ui.profilo.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_profilo" />
 
     <fragment
         android:id="@+id/nav_slideshow"

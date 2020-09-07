@@ -32,5 +32,7 @@
     <string name="codicediprova">CodiceDIPROVA</string>
     <string name="orari_disponibili">Orari Disponibili</string>
     <string name="annulla_prenotazione">Annulla Prenotazione</string>
+    <string name="modifica_password">Modifica Password</string>
+    <string name="logout">Logout</string>
 
 </resources>

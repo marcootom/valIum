@@ -27,19 +27,21 @@ public class MappaAppuntamenti {
         ArrayList<String> aUtente = new ArrayList<>();
         String msg = "";
         String data = "";
+        Calendar c = Calendar.getInstance();
 
         for(int i=0; i<(listaAppuntamenti.size());i++) {
             msg = "";
 
             if (listaAppuntamenti.get(i).getPaziente().equals(username)) {
-                int anno = listaAppuntamenti.get(i).getData().getYear() + 1900;
+                c.setTime(listaAppuntamenti.get(i).getData());
+                int anno = c.get(Calendar.YEAR);
                 int minuti = listaAppuntamenti.get(i).getMinutes();
                 String minuto = "" + minuti;
                 if(minuti == 0) {
                     minuto += minuti;
                 }
-                msg += "Appuntamento del " + listaAppuntamenti.get(i).getData().getDay() + "/" + (
-                        listaAppuntamenti.get(i).getData().getMonth() + 1) + "/" + Integer.toString(anno) +" alle ore: " + listaAppuntamenti.get(i).getHours() +":"+
+                msg += "Appuntamento del " + c.get(Calendar.DAY_OF_MONTH) + "/" + (
+                        c.get(Calendar.MONTH) + 1) + "/" + Integer.toString(anno) +" alle ore: " + listaAppuntamenti.get(i).getHours() +":"+
                         minuto;
                 aUtente.add(msg);
             }

@@ -40,7 +40,7 @@
             android:layout_height="116dp"
             android:layout_gravity="center"
             android:paddingBottom="30dp"
-            android:src="@drawable/record" />
+            android:src="@drawable/contact" />
 
         <TextView
             android:layout_width="wrap_content"

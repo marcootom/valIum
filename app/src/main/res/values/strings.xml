@@ -31,5 +31,6 @@
     <string name="email">Email</string>
     <string name="codicediprova">CodiceDIPROVA</string>
     <string name="orari_disponibili">Orari Disponibili</string>
+    <string name="annulla_prenotazione">Annulla Prenotazione</string>
 
 </resources>

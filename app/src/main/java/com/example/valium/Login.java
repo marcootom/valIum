@@ -1,19 +1,23 @@
 package com.example.valium;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
     com.google.android.material.textfield.TextInputEditText username, password;
     Button loginButton;
+    static int nv = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DataSet.caricaDati();
+        if(nv == 0) {
+            DataSet.caricaDati();
+            nv++;
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         username = findViewById(R.id.username);
@@ -75,11 +79,11 @@ public class Login extends AppCompatActivity {
         return (errors == 0);
     }
 
-    public void onBackPressed()
-    {
-        super.onBackPressed();
-        startActivity(new Intent(this, Login.class));
-        finish();
-
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }

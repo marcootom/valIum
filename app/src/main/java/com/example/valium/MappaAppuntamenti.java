@@ -40,8 +40,17 @@ public class MappaAppuntamenti {
                 if(minuti == 0) {
                     minuto += minuti;
                 }
-                msg += "Appuntamento del " + c.get(Calendar.DAY_OF_MONTH) + "/" + (
-                        c.get(Calendar.MONTH) + 1) + "/" + Integer.toString(anno) +" alle ore: " + listaAppuntamenti.get(i).getHours() +":"+
+                int giorno = c.get(Calendar.DAY_OF_MONTH);
+                String giorni = "" + giorno;
+                if(giorno < 10) {
+                    giorni = "0" + giorni;
+                }
+                int mese = c.get(Calendar.MONTH) + 1;
+                String mesi = "" + mese;
+                if(mese < 10) {
+                    mesi = "0" + mesi;
+                }
+                msg += "Appuntamento del " + giorni + "/" + mesi + "/" + Integer.toString(anno) +" alle ore: " + listaAppuntamenti.get(i).getHours() +":"+
                         minuto;
                 aUtente.add(msg);
             }

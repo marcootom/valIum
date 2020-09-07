@@ -1,10 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChangePw">
+    tools:context=".Registration">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="40dp"
+            >
+
+            <TextView
+                android:id="@+id/changePwText"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/modifica_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="monospace"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#2196F3"
+                android:textSize="24sp"
+                android:typeface="monospace"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:endIconMode="password_toggle"
+                android:id="@+id/oldPw"
+                android:layout_width="280dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/vecchia_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/oldPasswordText"
+                    android:layout_width="280dp"
+                    android:layout_height="47dp"
+                    android:inputType="textPassword"
+                    android:paddingRight="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/changePwText" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:endIconMode="password_toggle"
+                android:id="@+id/newPw"
+                android:layout_width="280dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/nuova_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/newPasswordText"
+                    android:layout_width="280dp"
+                    android:layout_height="47dp"
+                    android:inputType="textPassword"
+                    android:paddingRight="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/oldPw" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:endIconMode="password_toggle"
+                android:id="@+id/confirmNewPw"
+                android:layout_width="280dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/conferma_nuova_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/confirmNewPwText"
+                    android:layout_width="280dp"
+                    android:layout_height="47dp"
+                    android:inputType="textPassword"
+                    android:paddingRight="40dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/newPw" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/changePwButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="60dp"
+                android:text="@string/modifica_password"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirmNewPw" />
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

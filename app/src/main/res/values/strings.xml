@@ -37,5 +37,6 @@
     <string name="nuova_password">Nuova Password</string>
     <string name="conferma_nuova_password">Conferma Nuova Password</string>
     <string name="modifica_password">Modifica Password</string>
+    <string name="msg_exit">Clicca di nuovo indietro per uscire!</string>
 
 </resources>

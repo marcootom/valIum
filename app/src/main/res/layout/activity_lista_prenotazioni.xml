@@ -44,6 +44,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/noPrenotazioni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="16dp"
+                android:text="Nessuna prenotazione presente"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#373737"
+                android:textSize="13sp"
+                android:typeface="monospace"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclePrenotazioni"
                 android:layout_width="match_parent"

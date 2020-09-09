@@ -75,26 +75,75 @@ public class NuovaPrenotazione extends AppCompatActivity {
                             final String time = (String) adattatore.getItemAtPosition(pos);
                             AlertDialog.Builder builder = new AlertDialog.Builder(NuovaPrenotazione.this);
                             builder.setCancelable(true);
-                            builder.setTitle("Conferma prenotazione");
-                            builder.setMessage("Confermi la prenotazione per il " + d + " alle " + time + "?");
-                            builder.setPositiveButton("Conferma",
-                                    new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-                                            final int h, m;
-                                            String numbers[] = time.split(":");
-                                            h = Integer.parseInt(numbers[0]);
-                                            m = Integer.parseInt(numbers[1]);
-                                            MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
-                                            Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
-                                            listaPrenotazioni();
-                                        }
-                                    });
-                            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            });
+                            if(MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getPunteggio() > 0) {
+                                builder.setTitle("Conferma prenotazione");
+                                builder.setMessage("Confermi la prenotazione per il " + d + " alle " + time + "?");
+                                builder.setPositiveButton("Conferma",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                final int h, m;
+                                                String numbers[] = time.split(":");
+                                                h = Integer.parseInt(numbers[0]);
+                                                m = Integer.parseInt(numbers[1]);
+                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
+                                                Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
+                                                listaPrenotazioni();
+                                            }
+                                        });
+                                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                });
+                            }
+
+                            if(MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getPunteggio() == 0) {
+                                builder.setTitle("Conferma prenotazione");
+                                builder.setMessage("Confermi la prenotazione per il " + d + " alle " + time + "? " +
+                                        "Attento, se non ti ripresenterai di nuovo non potrai più prenotarti con l'app e dovrai " +
+                                        "contattare il tuo medico telefonicamente" );
+                                builder.setPositiveButton("Conferma",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                final int h, m;
+                                                String numbers[] = time.split(":");
+                                                h = Integer.parseInt(numbers[0]);
+                                                m = Integer.parseInt(numbers[1]);
+                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
+                                                Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
+                                                listaPrenotazioni();
+                                            }
+                                        });
+                                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                });
+
+                            }
+
+                            if(MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getPunteggio() < 0) {
+                                builder.setTitle("Errore prenotazione");
+                                builder.setMessage("Hai superato il numero massimo di volte in cui non ti sei presentato" +
+                                        ", per avere un appuntamento contatta telefonicamente il medico" );
+                                builder.setPositiveButton("Vai a contatti",
+                                        new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                    goContatti();
+                                            }
+                                        });
+                                builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                    }
+                                });
+
+                            }
+
+
 
                             AlertDialog dialog = builder.create();
                             dialog.show();
@@ -114,6 +163,11 @@ public class NuovaPrenotazione extends AppCompatActivity {
 
     public void listaPrenotazioni() {
         Intent intent = new Intent(this, ListaPrenotazioni.class);
+        startActivity(intent);
+    }
+
+    public void goContatti() {
+        Intent intent = new Intent(this, Contatti.class);
         startActivity(intent);
     }
 }

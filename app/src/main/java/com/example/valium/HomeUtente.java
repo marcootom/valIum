@@ -1,12 +1,15 @@
 package com.example.valium;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -15,10 +18,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class HomeUtente extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public String nc;
+    private boolean doubleBackToExitPressedOnce = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +63,36 @@ public class HomeUtente extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void onBackPressed() {
+
+        if (doubleBackToExitPressedOnce) {
+
+            this.finishAffinity();
+            return;
+        }
+        doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, R.string.msg_exit, Toast.LENGTH_SHORT).show();
+
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2500);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        doubleBackToExitPressedOnce = false;
+
     }
     
 }

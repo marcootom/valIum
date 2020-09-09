@@ -45,4 +45,11 @@ public class Contatti extends AppCompatActivity {
     private void dialContactPhone(final String phoneNumber) {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phoneNumber, null)));
     }
+
+    @Override
+    public void onBackPressed()
+    {
+        startActivity(new Intent(this, HomeUtente.class));
+        finish();
+    }
 }

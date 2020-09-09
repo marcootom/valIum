@@ -10,8 +10,8 @@ public class User {
     private Date dataNascita;
     private String telefono;
     private String email;
-    private int puntiAppuntamento;
     private Boolean medico;
+    private int punteggio;
 
 
     public User(String username, String password, String nome, String cognome, Date dataNascita, String telefono, String email, Boolean medico) {
@@ -22,8 +22,8 @@ public class User {
         this.telefono = telefono;
         this.dataNascita = dataNascita;
         this.email = email;
-        this.puntiAppuntamento = 3;
         this.medico = medico;
+        this.punteggio = -1;
     }
 
     public String getUsername() {
@@ -83,13 +83,6 @@ public class User {
         this.email = email;
     }
 
-    public int getPuntiAppuntamento() {
-        return puntiAppuntamento;
-    }
-
-    public void setPuntiAppuntamento(int puntiAppuntamento) {
-        this.puntiAppuntamento = puntiAppuntamento;
-    }
 
     public Boolean getMedico() {
         return medico;
@@ -98,4 +91,8 @@ public class User {
     public void setMedico(Boolean medico) {
         this.medico = medico;
     }
+
+    public int getPunteggio() {return this.punteggio;}
+
+    public void setPunteggio(int punteggio) {this.punteggio = punteggio;}
 }

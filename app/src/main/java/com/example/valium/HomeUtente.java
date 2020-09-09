@@ -1,9 +1,11 @@
 package com.example.valium;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +51,13 @@ public class HomeUtente extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        Button logout = findViewById(R.id.logoutButton);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    goLogout();
+            }
+        });
     }
 
     @Override
@@ -93,6 +102,9 @@ public class HomeUtente extends AppCompatActivity {
         super.onResume();
         doubleBackToExitPressedOnce = false;
 
+    }
+    public void goLogout() {
+        startActivity(new Intent(this, Login.class));
     }
     
 }

@@ -28,13 +28,14 @@
             android:layout_gravity="bottom"
             android:orientation="vertical"
             android:padding="16dp">
-                <Button
-                    android:layout_width="match_parent"
-                    android:background="@color/bluApplicazione"
-                    android:textColor="#FFFFFF"
-                    android:layout_height="match_parent"
-                    android:text="@string/logout"
-                    />
+
+            <Button
+                android:id="@+id/logoutButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bluApplicazione"
+                android:text="@string/logout"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
 
     </com.google.android.material.navigation.NavigationView>

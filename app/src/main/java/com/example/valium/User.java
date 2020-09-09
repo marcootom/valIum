@@ -23,7 +23,7 @@ public class User {
         this.dataNascita = dataNascita;
         this.email = email;
         this.medico = medico;
-        this.punteggio = -1;
+        this.punteggio = 3;
     }
 
     public String getUsername() {

@@ -26,7 +26,7 @@ import java.util.TimerTask;
 public class HomeUtente extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    public String nc;
+    public String nc, pts;
     private boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -39,9 +39,11 @@ public class HomeUtente extends AppCompatActivity {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
-        TextView ncText = headerView.findViewById(R.id.nomeCognome);
+        TextView ncText = headerView.findViewById(R.id.nomeCognome), points = headerView.findViewById(R.id.puntiUtente);
+        pts = "Punti appuntamento: " + MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getPunteggio() + "/3";
         nc = MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getNome() + ' ' + MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getCognome();
         ncText.setText(nc);
+        points.setText(pts);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -52,6 +54,12 @@ public class HomeUtente extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         Button logout = findViewById(R.id.logoutButton);
+        points.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goPoints();
+            }
+        });
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,5 +114,9 @@ public class HomeUtente extends AppCompatActivity {
     public void goLogout() {
         startActivity(new Intent(this, Login.class));
     }
-    
+
+
+    public void goPoints(){
+        startActivity(new Intent(this, Punti.class));
+    }
 }

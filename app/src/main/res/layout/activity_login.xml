@@ -39,7 +39,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="@string/login"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="#2196F3"
+                android:textColor="@color/bluApplicazione"
                 android:textSize="24sp"
                 android:typeface="monospace"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +53,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginTop="36dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:hint="@string/codiceFiscale">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -71,6 +72,7 @@
                 app:endIconMode="password_toggle"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
@@ -98,7 +100,7 @@
                 android:enabled="true"
                 android:onClick="registration"
                 android:text="@string/registrazione"
-                android:textColor="#03A9F4"
+                android:textColor="@color/bluApplicazione"
                 android:textColorHighlight="#FFFFFF"
                 android:textIsSelectable="false"
                 android:textStyle="normal"
@@ -109,7 +111,9 @@
 
             <Button
                 android:id="@+id/login"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@color/bluApplicazione"
+                android:textColor="#ffffff"
+                android:padding="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -40,6 +40,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/bluApplicazione"
                 android:id="@+id/oldPw"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -62,6 +63,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/bluApplicazione"
                 android:id="@+id/newPw"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -84,6 +86,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/bluApplicazione"
                 android:id="@+id/confirmNewPw"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -106,7 +109,9 @@
 
             <Button
                 android:id="@+id/changePwButton"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@color/bluApplicazione"
+                android:textColor="#ffffff"
+                android:padding="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -40,6 +40,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
@@ -60,6 +61,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/bluApplicazione"
                 android:id="@+id/passwordHint"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -82,6 +84,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/bluApplicazione"
                 android:id="@+id/confirmPasswordHint"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
@@ -104,6 +107,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
@@ -124,6 +128,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
@@ -144,6 +149,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/birthdayDate"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_width="280dp"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
@@ -166,6 +172,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
@@ -186,6 +193,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
+                app:hintTextColor="@color/bluApplicazione"
                 android:layout_height="47dp"
                 android:layout_gravity="center"
                 android:layout_marginStart="16dp"
@@ -206,7 +214,9 @@
 
             <Button
                 android:id="@+id/registrati"
-                style="@style/Widget.AppCompat.Button.Colored"
+                android:background="@color/bluApplicazione"
+                android:textColor="#ffffff"
+                android:padding="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

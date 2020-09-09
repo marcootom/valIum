@@ -38,5 +38,7 @@
     <string name="conferma_nuova_password">Conferma Nuova Password</string>
     <string name="modifica_password">Modifica Password</string>
     <string name="msg_exit">Clicca di nuovo indietro per uscire!</string>
+    <string name="punti_prenotazione">Punti prenotazione</string>
+    <string name="advisor">I punti prenotazione servono ad effettuare le prenotazioni dei tuoi appuntamenti tramite l\'applicazione. Se il tuo saldo è negativo, devi contattare telefonicamente il tuo medico per prenotare un appuntamento.</string>
 
 </resources>

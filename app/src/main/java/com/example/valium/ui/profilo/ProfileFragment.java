@@ -25,7 +25,7 @@ public class ProfileFragment extends Fragment {
     SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
     private ProfiloViewModel galleryViewModel;
-    Button logout, changePw;
+    Button changePw;
     public EditText data;
     public com.google.android.material.textfield.TextInputEditText username, password, confirmPassword, name, surname, phone, email;
 
@@ -35,7 +35,6 @@ public class ProfileFragment extends Fragment {
         galleryViewModel =
                 ViewModelProviders.of(this).get(ProfiloViewModel.class);
         View root = inflater.inflate(R.layout.fragment_profilo, container, false);
-        logout = root.findViewById(R.id.logout);
         changePw = root.findViewById(R.id.changePw);
 
 
@@ -59,15 +58,6 @@ public class ProfileFragment extends Fragment {
         email.setText(u.getEmail());
         email.setKeyListener(null);
 
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MappaUtenti.setUtenteAttuale(null);
-                Intent intent = new Intent(getActivity(), Login.class);
-                startActivity(intent);
-            }
-        });
 
         changePw.setOnClickListener(new View.OnClickListener() {
             @Override

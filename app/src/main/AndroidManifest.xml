@@ -17,8 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".Punti"></activity>
-        <activity android:name=".ChangePw"></activity>
+        <activity android:name=".ListaPazienti"></activity>
+        <activity android:name=".Punti" />
+        <activity android:name=".ChangePw" />
         <activity android:name=".ListaPrenotazioni" />
         <activity android:name=".NuovaPrenotazione" />
         <activity android:name=".HomeMedico" />

@@ -37,7 +37,7 @@
         card_view:layout_constraintVertical_bias="0.0" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/bottoneLeMieRicette"
+        android:id="@+id/bottoneListaPazienti"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="24dp"
@@ -59,7 +59,7 @@
             android:layout_height="116dp"
             android:layout_gravity="center"
             android:paddingBottom="30dp"
-            android:src="@drawable/record" />
+            android:src="@drawable/patient" />
 
         <TextView
             android:layout_width="151dp"
@@ -68,7 +68,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/leMieRicette"
+            android:text="@string/lista_pazienti"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"
@@ -91,7 +91,7 @@
         card_view:layout_constraintHeight_percent="0.22"
         card_view:layout_constraintHorizontal_bias="0.333"
         card_view:layout_constraintStart_toEndOf="@+id/bottoneNuovaPrenotazione"
-        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMiePrenotazioni"
+        card_view:layout_constraintTop_toBottomOf="@+id/bottoneListaPrenotazioni"
         card_view:layout_constraintWidth_percent="0.4">
 
         <ImageView
@@ -130,7 +130,7 @@
         card_view:contentPadding="0dp"
         card_view:layout_constraintHeight_percent="0.22"
         card_view:layout_constraintStart_toStartOf="parent"
-        card_view:layout_constraintTop_toBottomOf="@+id/bottoneLeMieRicette"
+        card_view:layout_constraintTop_toBottomOf="@+id/bottoneListaPazienti"
         card_view:layout_constraintWidth_percent="0.4">
 
         <ImageView
@@ -155,7 +155,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/bottoneLeMiePrenotazioni"
+        android:id="@+id/bottoneListaPrenotazioni"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="12dp"
@@ -168,7 +168,7 @@
         card_view:layout_constraintEnd_toEndOf="parent"
         card_view:layout_constraintHeight_percent="0.22"
         card_view:layout_constraintHorizontal_bias="0.333"
-        card_view:layout_constraintStart_toEndOf="@+id/bottoneLeMieRicette"
+        card_view:layout_constraintStart_toEndOf="@+id/bottoneListaPazienti"
         card_view:layout_constraintTop_toBottomOf="@+id/logoStudio"
         card_view:layout_constraintWidth_percent="0.4">
 
@@ -186,7 +186,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="44dp"
             android:layout_marginEnd="16dp"
-            android:text="@string/leMiePrenotazioni"
+            android:text="@string/lista_prenotazioni"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#FFFFFF"

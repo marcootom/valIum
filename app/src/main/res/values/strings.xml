@@ -42,6 +42,6 @@
     <string name="advisor">I punti prenotazione servono ad effettuare le prenotazioni dei tuoi appuntamenti tramite l\'applicazione. Se il tuo saldo è negativo, devi contattare telefonicamente il tuo medico per prenotare un appuntamento.</string>
     <string name="lista_pazienti">Lista Pazienti</string>
     <string name="lista_prenotazioni">Lista Prenotazioni</string>
-    <string name="lista_pazienti">Lista Pazienti</string>
+    <string name="cerca_paziente">Cerca paziente</string>
 
 </resources>

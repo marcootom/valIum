@@ -1,5 +1,11 @@
 package com.example.valium;
 
+import java.text.Format;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 //Questa classe genera una HashMap contenente una lista di oggetti di classe User, identificati da una chiave Stringa composta dallo username
@@ -37,5 +43,24 @@ public class MappaUtenti {
         }
         listaUtenti.remove(utenteAttuale);
         aggiungi(utenteAttuale, u);
+    }
+
+    public static ArrayList<String> getListaUtenti(String s){
+        String d, s1;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        Collection<User> collection = listaUtenti.values();
+        User[] array = collection.toArray(new User[0]);
+        ArrayList<String> list = new ArrayList<>();
+        for (User user : array) {
+            if (!user.getMedico()) {
+                d = format.format(user.getDataNascita());
+                s1 = user.getCognome() + " " + user.getNome() + " - " + d;
+                if (s1.contains(s)) {
+                    list.add(s1);
+                }
+            }
+        }
+        Collections.sort(list);
+        return list;
     }
 }

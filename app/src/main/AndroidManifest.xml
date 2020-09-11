@@ -17,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".ListaPazienti"></activity>
+        <activity android:name=".PaginaPaziente" />
+        <activity
+            android:name=".ListaPazienti"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity android:name=".Punti" />
         <activity android:name=".ChangePw" />
         <activity android:name=".ListaPrenotazioni" />

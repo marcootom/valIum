@@ -13,6 +13,8 @@ import java.util.Map;
 public class MappaUtenti {
     private static Map<String, User> listaUtenti = new HashMap<>();
     private static String utenteAttuale;
+    private static User pazienteAttuale;
+
 
     //Funzione per recuperare i dati dell'utente attualmente loggato
     public static String getUtenteAttuale() {
@@ -54,7 +56,7 @@ public class MappaUtenti {
         for (User user : array) {
             if (!user.getMedico()) {
                 d = format.format(user.getDataNascita());
-                s1 = user.getCognome() + " " + user.getNome() + " - " + d;
+                s1 = user.getCognome() + " " + user.getNome() + " - " + d + " " + user.getUsername();
                 if (s1.contains(s)) {
                     list.add(s1);
                 }
@@ -62,5 +64,13 @@ public class MappaUtenti {
         }
         Collections.sort(list);
         return list;
+    }
+
+    public static User getPazienteAttuale() {
+        return pazienteAttuale;
+    }
+
+    public static void setPazienteAttuale(User pazienteAttuale) {
+        MappaUtenti.pazienteAttuale = pazienteAttuale;
     }
 }

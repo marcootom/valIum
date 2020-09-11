@@ -1,9 +1,7 @@
 package com.example.valium;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +27,7 @@ public class ListaPrenotazioni extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         r.setLayoutManager(llm);
         if(prenotazioni.size()==0){
-            msg = findViewById(R.id.noPrenotazioni);
+            msg = findViewById(R.id.noResults);
             msg.setVisibility(TextView.VISIBLE);
         }
 

@@ -1,23 +1,16 @@
 package com.example.valium;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class HomeMedico extends AppCompatActivity {
     TextView benvenuto;
     public CardView listaPazienti, listaPrenotazioni;
-    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,30 +29,6 @@ public class HomeMedico extends AppCompatActivity {
             }
         });
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    public void onBackPressed() {
-
-        if (doubleBackToExitPressedOnce) {
-
-            this.finishAffinity();
-            return;
-        }
-        doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, R.string.msg_exit, Toast.LENGTH_SHORT).show();
-
-        Timer t = new Timer();
-        t.schedule(new TimerTask() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2500);
-
-    }
-
 
     public void goListaPazienti(){
         Intent intent = new Intent(this, ListaPazienti.class);

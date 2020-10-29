@@ -1,17 +1,22 @@
 package com.example.valium;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ListaPazienti extends AppCompatActivity {
@@ -63,7 +68,7 @@ public class ListaPazienti extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id) {
                 final String paziente = (String) adattatore.getItemAtPosition(pos);
                 String[] paz = paziente.split(" ");
-                MappaUtenti.setPazienteAttuale(MappaUtenti.recuperaUtente(paz[4]));
+                MappaUtenti.setUtenteAttuale(paz[4]);
                 paginaPaziente();
             }
         });

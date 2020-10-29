@@ -43,5 +43,8 @@
     <string name="lista_pazienti">Lista Pazienti</string>
     <string name="lista_prenotazioni">Lista Prenotazioni</string>
     <string name="cerca_paziente">Cerca paziente</string>
+    <string name="nome_paziente">Nome Paziente</string>
+    <string name="Patologie">Patologie</string>
+    <string name="carica_ricetta">Carica Ricetta</string>
 
 </resources>

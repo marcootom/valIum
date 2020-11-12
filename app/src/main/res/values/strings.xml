@@ -46,5 +46,6 @@
     <string name="nome_paziente">Nome Paziente</string>
     <string name="Patologie">Patologie</string>
     <string name="carica_ricetta">Carica Ricetta</string>
+    <string name="appuntamenti">Appuntamenti</string>
 
 </resources>

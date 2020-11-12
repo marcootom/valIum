@@ -35,6 +35,16 @@ public class HomeMedico extends AppCompatActivity {
                 goListaPazienti();
             }
         });
+        listaPrenotazioni.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                goListaPrenotazioni();
+            }
+        });
+    }
+
+    private void goListaPrenotazioni() {
+        Intent intent = new Intent(this, ListaAppuntamentiMedico.class);
+        startActivity(intent);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

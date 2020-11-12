@@ -60,6 +60,30 @@ public class MappaAppuntamenti {
         return aUtente;
     }
 
+    public static ArrayList<String> appuntamentiPerData(Date data) {
+        ArrayList<String> agenda = new ArrayList<>();
+        String msg = "";
+        int minuti = 0;
+        int i;
+        for(i=0; i<(listaAppuntamenti.size());i++) {
+            msg = "";
+            Appuntamento a = listaAppuntamenti.get(i);
+            if (listaAppuntamenti.get(i).getData().getDay() == data.getDay() &&
+                    listaAppuntamenti.get(i).getData().getMonth() == data.getMonth()) {
+                minuti = listaAppuntamenti.get(i).getMinutes();
+                String minuto = "" + minuti;
+                if (minuti == 0)
+                    minuto += minuti;
+                String p = listaAppuntamenti.get(i).getPaziente();
+                msg += "Appuntamento delle ore: " + listaAppuntamenti.get(i).getHours() + ":" + minuto + " - " +
+                        MappaUtenti.recuperaUtente(p).getCognome() + " " + MappaUtenti.recuperaUtente(p).getNome();
+                agenda.add(msg);
+
+            }
+        }
+        return agenda;
+    }
+
     public static void rimuoviAppuntamento (Appuntamento a){
         for(int i=0; i<(listaAppuntamenti.size()); i++){
             if((listaAppuntamenti.get(i).getPaziente().equals(a.getPaziente())) &&
@@ -118,4 +142,6 @@ public class MappaAppuntamenti {
         }
         return times;
     }
+
+
 }

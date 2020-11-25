@@ -47,5 +47,9 @@
     <string name="Patologie">Patologie</string>
     <string name="carica_ricetta">Carica Ricetta</string>
     <string name="appuntamenti">Appuntamenti</string>
+    <string name="richiedi_ricetta">Richiedi Ricetta</string>
+    <string name="sceltaFarmaco">Scegli il farmaco per cui desideri richiedere una ricetta</string>
+    <string name="richieste_ricette">Richieste Ricette</string>
+    <string name="lista_richieste_ricette">Lista Richieste Ricette</string>
 
 </resources>

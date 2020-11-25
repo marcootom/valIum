@@ -16,7 +16,7 @@ import androidx.cardview.widget.CardView;
 
 public class HomeMedico extends AppCompatActivity {
     TextView benvenuto;
-    public CardView listaPazienti, listaPrenotazioni;
+    public CardView listaPazienti, listaPrenotazioni, listaRichiesteRicette;
     private boolean doubleBackToExitPressedOnce = false;
 
     @Override
@@ -25,10 +25,18 @@ public class HomeMedico extends AppCompatActivity {
         setContentView(R.layout.activity_home_medico);
         listaPazienti = findViewById(R.id.bottoneListaPazienti);
         listaPrenotazioni = findViewById(R.id.bottoneListaPrenotazioni);
+        listaRichiesteRicette = findViewById(R.id.bottoneListaRichiesteRicette);
 
         benvenuto = findViewById(R.id.benvenutomedico);
         String s = "Benvenuto, Dottor " + MappaUtenti.recuperaUtente(MappaUtenti.getUtenteAttuale()).getCognome() + "!";
         benvenuto.setText(s);
+
+        listaRichiesteRicette.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goListaRichiesteRicette();
+            }
+        });
 
         listaPazienti.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
@@ -73,6 +81,10 @@ public class HomeMedico extends AppCompatActivity {
 
     public void goListaPazienti(){
         Intent intent = new Intent(this, ListaPazienti.class);
+        startActivity(intent);
+    }
+    public void goListaRichiesteRicette(){
+        Intent intent = new Intent(this, ListaRichiesteRicette.class);
         startActivity(intent);
     }
 }

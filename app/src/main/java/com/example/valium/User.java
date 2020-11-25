@@ -1,5 +1,6 @@
 package com.example.valium;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -12,9 +13,10 @@ public class User {
     private String email;
     private Boolean medico;
     private int punteggio;
+    private ArrayList<String> listaFarmaci;
 
 
-    public User(String username, String password, String nome, String cognome, Date dataNascita, String telefono, String email, Boolean medico) {
+    public User(String username, String password, String nome, String cognome, Date dataNascita, String telefono, String email, Boolean medico, ArrayList<String> listaFarmaci) {
         this.username = username;
         this.password = password;
         this.nome = nome;
@@ -24,6 +26,7 @@ public class User {
         this.email = email;
         this.medico = medico;
         this.punteggio = 3;
+        this.listaFarmaci = listaFarmaci;
     }
 
     public String getUsername() {
@@ -92,9 +95,23 @@ public class User {
         this.medico = medico;
     }
 
-    public int getPunteggio() {return this.punteggio;}
+    public int getPunteggio() {
+        return this.punteggio;
+    }
 
-    public void setPunteggio(int punteggio) {this.punteggio = punteggio;}
+    public void setPunteggio(int punteggio) {
+        this.punteggio = punteggio;
+    }
 
-    public void decrementaPunteggio(){this.punteggio --;}
+    public void decrementaPunteggio() {
+        this.punteggio--;
+    }
+
+    public ArrayList<String> getListaFarmaci() {
+        return listaFarmaci;
+    }
+
+    public void setListaFarmaci(ArrayList<String> listaFarmaci) {
+        this.listaFarmaci = listaFarmaci;
+    }
 }

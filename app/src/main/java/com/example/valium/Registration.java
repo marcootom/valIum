@@ -93,7 +93,7 @@ public class Registration extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     user = new User(username.getText().toString(), password.getText().toString(), name.getText().toString(),
-                            surname.getText().toString(), d, phone.getText().toString(), email.getText().toString(), false);
+                            surname.getText().toString(), d, phone.getText().toString(), email.getText().toString(), false, null);
                     MappaUtenti.aggiungi(user.getUsername(),user);
                     Home();
                 }

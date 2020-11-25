@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".ListaAppuntamentiMedico"></activity>
+        <activity android:name=".ListaRichiesteRicette"></activity>
+        <activity android:name=".RichiediRicetta" />
+        <activity android:name=".ListaAppuntamentiMedico" />
         <activity android:name=".PaginaPaziente" />
         <activity
             android:name=".ListaPazienti"

@@ -1,5 +1,6 @@
 package com.example.valium;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 //Questa classe genera automaticamente alla prima esecuzione dell'app dei dati di esempio per popolare le altre classi
@@ -10,26 +11,36 @@ public class DataSet {
         caricaUtenti();
         caricaRicette();
         caricaAppuntamenti();
+        caricaRichiesteRicette();
     }
 
     public static void caricaMedico() {
         Date date = new Date(75, 10, 4);
         User medico = new User("RSSMRA75S04B354T", "medico75", "Mario", "Rossi",
-                date, "0704544896", "dotrossimario@gmail.com", true);
+                date, "0704544896", "dotrossimario@gmail.com", true, null);
         MappaUtenti.aggiungi(medico.getUsername(), medico);
     }
 
     public static void caricaUtenti() {
         Date date;
+        ArrayList <String> listaFarmaci = new ArrayList<>();
+        listaFarmaci.add("Lorazepam");
+        listaFarmaci.add("Warfarin");
         date = new Date(52, 8, 9);
         User u1 = new User("BNCLGU52P09I734K", "siliqua33", "Luigi", "Bianchi",
-                date, "3365588978", "whiteluigi@gmail.com", false);
+                date, "3365588978", "whiteluigi@gmail.com", false, listaFarmaci);
         date = new Date(67, 6, 6);
+        listaFarmaci = new ArrayList<>();
+        listaFarmaci.add("Paracetamolo");
+        listaFarmaci.add("Ramiprili");
         User u2 = new User("VRDGNN67L46I765G", "tartaruga22", "Giovanna", "Verdi",
-                date, "3452525225", "gioverdi@gmail.com", false);
+                date, "3452525225", "gioverdi@gmail.com", false, listaFarmaci);
         date = new Date(96, 2, 3);
+        listaFarmaci = new ArrayList<>();
+        listaFarmaci.add("Lorazepam");
+        listaFarmaci.add("Sertralina");
         User u3 = new User("PRSDVD96C03E441A", "davide96", "Davide", "Piras",
-                date, "3886240344", "davidino96@gmail.com", false);
+                date, "3886240344", "davidino96@gmail.com", false, listaFarmaci);
         MappaUtenti.aggiungi(u1.getUsername(), u1);
         MappaUtenti.aggiungi(u2.getUsername(), u2);
         MappaUtenti.aggiungi(u3.getUsername(), u3);
@@ -52,17 +63,26 @@ public class DataSet {
 
     public static void caricaAppuntamenti() {
         Appuntamento a;
-        Date date = new Date(120, 8, 23);
+        Date date = new Date(120, 10, 23);
         a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
-        date = new Date(120, 8, 24);
+        date = new Date(120, 10, 24);
         a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
-        date = new Date(120, 8, 28);
+        date = new Date(120, 10, 28);
         a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
-        date = new Date(120, 8, 24);
+        date = new Date(120, 10, 24);
         a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
+    }
+
+    public static void caricaRichiesteRicette(){
+        RichiesteRicette r = new RichiesteRicette("Lorazepam", "BNCLGU52P09I734K");
+        MappaRichiesteRicette.aggiungiRichiesta(r);
+        r = new RichiesteRicette("Warfarin", "BNCLGU52P09I734K");
+        MappaRichiesteRicette.aggiungiRichiesta(r);
+        r = new RichiesteRicette("Ramiprili", "VRDGNN67L46I765G");
+        MappaRichiesteRicette.aggiungiRichiesta(r);
     }
 }

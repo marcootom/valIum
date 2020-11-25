@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,8 +6,8 @@
     tools:context=".Ricette">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="410dp"
+        android:layout_height="733dp"
         android:layout_gravity="center"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,7 +16,7 @@
         <ScrollView
             android:id="@+id/sc1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="205dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -36,7 +35,7 @@
                     android:src="@drawable/logostudiomedico" />
 
                 <TextView
-                    android:id="@+id/loginText"
+                    android:id="@+id/listaRicRicText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -44,7 +43,7 @@
                     android:layout_marginTop="44dp"
                     android:layout_marginEnd="16dp"
                     android:fontFamily="monospace"
-                    android:text="@string/leMieRicette"
+                    android:text="@string/lista_richieste_ricette"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#2196F3"
                     android:textSize="24sp"
@@ -52,58 +51,35 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-
-
             </LinearLayout>
         </ScrollView>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="418dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/sc1"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="40dp"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
 
                 <ListView
-                    android:id="@+id/listView1"
-                    android:layout_width="300dp"
-                    android:layout_height="325dp"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="30dp" />
+                    android:id="@+id/listaRichieste"
+                    android:layout_width="226dp"
+                    android:layout_height="219dp"
+                    android:layout_marginTop="20dp" />
 
             </LinearLayout>
         </ScrollView>
-
     </LinearLayout>
-
-    <Button
-        android:id="@+id/richiediRicetta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
-        android:background="@color/bluApplicazione"
-        android:enabled="true"
-        android:padding="15dp"
-        android:text="@string/richiedi_ricetta"
-        android:textColor="#ffffff"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.24" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

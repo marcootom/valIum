@@ -58,9 +58,9 @@ public class ListaPazienti extends AppCompatActivity {
         });
 
         lPaz.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id) {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                @Override
+                public void onItemClick(AdapterView<?> adattatore, final View componente, int pos, long id) {
                 final String paziente = (String) adattatore.getItemAtPosition(pos);
                 String[] paz = paziente.split(" ");
                 MappaUtenti.setPazienteAttuale(MappaUtenti.recuperaUtente(paz[4]));

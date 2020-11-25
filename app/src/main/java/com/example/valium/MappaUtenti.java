@@ -73,4 +73,15 @@ public class MappaUtenti {
     public static void setPazienteAttuale(User pazienteAttuale) {
         MappaUtenti.pazienteAttuale = pazienteAttuale;
     }
+
+    public static void rimuoviPuntoPrenotazione(String nome, String cognome){
+        Collection<User> collection = listaUtenti.values();
+        User[] arrayUtenti = collection.toArray(new User[0]);
+        for (User user : arrayUtenti) {
+            if (user.getNome().equals(nome) &&
+                    user.getCognome().equals(cognome)) {
+                MappaUtenti.recuperaUtente(user.getUsername()).decrementaPunteggio();
+            }
+        }
+    }
 }

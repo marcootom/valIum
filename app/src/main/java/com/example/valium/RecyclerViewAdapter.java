@@ -62,7 +62,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
 
 
-        final Appuntamento a = new Appuntamento(MappaUtenti.getUtenteAttuale(), date, ora,minuti );
+        final Appuntamento a = new Appuntamento(MappaUtenti.getUtenteAttuale(), date, ora,minuti, false);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override

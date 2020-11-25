@@ -6,12 +6,14 @@ public class Appuntamento {
     private String paziente;
     private Date data;
     private int hours, minutes;
+    private Boolean presentato;
 
-    public Appuntamento(String p, Date d, int h, int m){
+    public Appuntamento(String p, Date d, int h, int m, Boolean presentato){
         this.paziente = p;
         this.data = d;
         this.hours = h;
         this.minutes = m;
+        this.presentato = presentato;
     }
 
     public String getPaziente() {
@@ -39,4 +41,11 @@ public class Appuntamento {
         this.data = data;
     }
 
+    public Boolean getPresentato() {
+        return presentato;
+    }
+
+    public void setPresentato(Boolean presentato) {
+        this.presentato = presentato;
+    }
 }

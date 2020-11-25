@@ -53,16 +53,16 @@ public class DataSet {
     public static void caricaAppuntamenti() {
         Appuntamento a;
         Date date = new Date(120, 8, 23);
-        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30);
+        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
         date = new Date(120, 8, 24);
-        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30);
+        a = new Appuntamento("BNCLGU52P09I734K", date, 9, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
         date = new Date(120, 8, 28);
-        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30);
+        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
         date = new Date(120, 8, 24);
-        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30);
+        a = new Appuntamento("VRDGNN67L46I765G", date, 10, 30, false);
         MappaAppuntamenti.aggiungiAppuntamento(a);
     }
 }

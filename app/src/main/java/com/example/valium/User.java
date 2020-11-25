@@ -95,4 +95,6 @@ public class User {
     public int getPunteggio() {return this.punteggio;}
 
     public void setPunteggio(int punteggio) {this.punteggio = punteggio;}
+
+    public void decrementaPunteggio(){this.punteggio --;}
 }

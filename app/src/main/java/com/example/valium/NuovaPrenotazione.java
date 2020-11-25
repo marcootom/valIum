@@ -86,7 +86,7 @@ public class NuovaPrenotazione extends AppCompatActivity {
                                                 String numbers[] = time.split(":");
                                                 h = Integer.parseInt(numbers[0]);
                                                 m = Integer.parseInt(numbers[1]);
-                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
+                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m, false));
                                                 Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
                                                 listaPrenotazioni();
                                             }
@@ -111,7 +111,7 @@ public class NuovaPrenotazione extends AppCompatActivity {
                                                 String numbers[] = time.split(":");
                                                 h = Integer.parseInt(numbers[0]);
                                                 m = Integer.parseInt(numbers[1]);
-                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m));
+                                                MappaAppuntamenti.aggiungiAppuntamento(new Appuntamento(MappaUtenti.getUtenteAttuale(), date1, h, m, false));
                                                 Toast.makeText(getApplicationContext(), "Prenotazione confermata!", Toast.LENGTH_LONG).show();
                                                 listaPrenotazioni();
                                             }

@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class MappaAppuntamenti {
 
-    private static ArrayList<Appuntamento> listaAppuntamenti = new ArrayList<>();
+    private static final ArrayList<Appuntamento> listaAppuntamenti = new ArrayList<>();
     public static void aggiungiAppuntamento (Appuntamento a){listaAppuntamenti.add(a);}
 
 
@@ -91,6 +91,18 @@ public class MappaAppuntamenti {
                     (listaAppuntamenti.get(i).getHours() == ((a.getHours()))) ){
                 listaAppuntamenti.remove(i);
                 break;
+            }
+        }
+    }
+
+    public static void rimuoviAppuntamento(Date d, String h){
+        String[] numbers = h.split(" ");
+        numbers = numbers[3].split(":");
+        int hours = Integer.parseInt(numbers[0]);
+        int minutes = Integer.parseInt(numbers[1]);
+        for(int i=0; i<(listaAppuntamenti.size()); i++){
+            if(listaAppuntamenti.get(i).getData().equals(d) && listaAppuntamenti.get(i).getHours() == hours && listaAppuntamenti.get(i).getMinutes() == minutes){
+                rimuoviAppuntamento(listaAppuntamenti.get(i));
             }
         }
     }
